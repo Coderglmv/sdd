@@ -1,0 +1,69 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<main>
+    <section id="to_book1">
+        <div class="container">
+            <div class="row">
+                <div class="col-7">
+                   <div class="mb-4">
+                    <a class="text-decoration-none text-dark" href="{% url 'cofe:main' %}">Home/ </a>
+                    <a class="text-decoration-none text-dark" href="{% url 'cofe:shop' %}">Магазин/</a>
+                    <a class="text-decoration-none text-dark" href="#">Ваш товар</a>
+                    
+                   </div>
+                   
+                       <div style="
+                        border: 1px solid grey;
+                        text-align: center;">
+                           <img src="{{product.image.url}}" class="w-100" alt="">
+                       </div>
+
+                       <div>
+                           <img src="{{product.image.url}}" style="width: 20px" alt="">
+                          
+                       </div>
+
+                       <div class="font-13 mt-3">
+                        Это описание товара. Здесь вы можете рассказать о
+                         товаре подробнее: напишите о размерах, материалах, уходе и любых других важных моментах.
+                       </div>
+
+                   
+                </div>
+                <div class="col-5">
+                    <div class="mt-5">
+                        <h5>Ваш товар</h5>
+                        
+                        <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">{{product.money}}{{product.price}} </p>
+                        <p class="mb-2" >Quantity</p>
+                        <input type="number" value="1" style="    width: 90px;
+                        padding-left: 10px;
+                        border: 1px solid grey;
+                        height: 31px;"><br>
+                        <button class="btn btn-primary mt-3 w-100 rounded-0">Add to Cart</button>
+                    </div>
+                    <div class="mt-4">
+                        <p>О ТОВАРЕ</p>
+                        <p class="font-13 f-italic">
+                            {{product.about_product}}</p>
+                    </div>
+                    <hr>
+
+                    <div>
+                        <p>ПОЛИТИКА ВОЗВРАТА</p>
+                        <p class="font-13 f-italic">
+                            {{product.return_policy}}</p>
+                    </div>
+
+                        
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock %}

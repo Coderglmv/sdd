@@ -1,0 +1,113 @@
+
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+
+<main id="main" style="margin-top: 69px;">
+    <section id="section1" >   
+        <div>
+            <img src="{% static 'image/person.webp' %}" alt="">
+        </div>
+        <div class="realy_voice">   
+            НАСТОЯЩЕЕ
+            ЗВУЧАНИЕ
+            <br>        
+             <button class="btn btn-primary px-5 rounded-0">Купит</button>
+        </div>
+    </section>
+    <section id="section2">
+        <div class="text-center f-italic d-flex align-items-center " style="height: 100vh;">
+            <div>
+                {% for x in main %}
+                    <h6>{{x.title}}</h6>
+                                <p style="    line-height: 1.5em;
+                                text-align: center;
+                                font-size: 13px;
+                                width: 86%;
+                            ">
+                                {{x.body}}
+                                </p> 
+                {% endfor %}
+               
+            <button class="btn btn-primary px-3 rounded-0">В МАГАЗИН</button>
+            </div>
+            
+
+        </div>
+        <div>
+            {% for x in main %}
+                 <img src="{{x.image.url}}" alt="">
+            {% endfor %}
+           
+        </div>
+    </section>
+    <section id="section3">
+        {% for x in main %}
+        <div class="about_us">
+            <p>{{x.about_us_product}}</p>
+        </div>
+
+        <div class="text-center mt-5">
+            <video width="700" height="300" autoplay controls>
+                <source src="{{x.video}}" type="video/mp4">
+            </video>
+        </div>
+        {% endfor %}
+        <div class="bottom-image">
+            <div class="row text-white" style="padding: 15px 120px;">
+               {% for x in aboutProduct %}
+                <div class="col-4 f-italic">
+                    <h6 class="mt-5">
+                        {{x.title}}
+                    </h6>
+                    
+                    <p>
+                       {{x.body}}
+                    </p>
+
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+        
+    </section>
+    <section id="section4">
+        <div class="about_us">
+            <p>СВЯЗЬ</p>
+        </div>
+
+        <div id="input"  style="padding: 10px 310px;">
+            <form action="{% url 'cofe:main' %}" method="post" class="d-flex">
+                {% csrf_token %}
+                <div>
+                <input type="text" name="name" placeholder="Имя"> <br>
+                <input type="email" name="email" placeholder="Эл.почта"><br>
+                <input type="number" name="phone" placeholder="Телефон">
+            </div>
+            <div>
+                <textarea name="requestt" placeholder="Добавьте сообшение..." id="" cols="30" rows="10"></textarea> <br>
+                <input class="btn btn-primary rounded-0" type="submit" style="float: right;">Отправить</input>
+                
+            </div>
+            </form>
+           <div class="text-center mt-5">
+            <p>Это заголовок. Кликните, чтобы отредактировать</p>
+
+            <p class="font-13 f-italic">Это текст. Нажмите один раз и выберите «Редактировать текст» 
+                или просто кликните дважды, чтобы добавить свой текст и настроить шрифт. Расскажите посетителям сайта о себе.</p>
+
+
+                <p>Телефон: +7 (495) 000-00-00  /   Email: info@mysite.ru</p>
+
+                <a href="#" >Узнать о нас больше > </a href="#"> <br>
+                <button class="btn btn-primary mt-3 rounded-0 px-4">В МАГАЗИН ></button>
+           </div>
+        </div>
+    </section>
+   
+</main>
+
+{% endblock %}

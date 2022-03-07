@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+
+<main>
+    <section id="about_us1" class="mb-5">
+        <div class="whoAreWe text-center">
+            НАШИ <br>
+             НАУШНИКИ
+        </div>
+
+        <div class="shopping container" style="padding: 20px 70px">
+            <div class="row">
+                {% for x in products %}
+                <div class="col-3">
+                    <div>
+                        <a href="{% url 'cofe:book' x.id %}"><img style="width: 70%;" src="{{x.image.url}}" alt=""></a>
+                    </div>
+                    <div>
+                        <p style="font-size: 12px;" class="mb-1">Ваш товар</p>
+                        <p style="font-size: 12px;" class="mb-1">
+                            {% if x.old_price %}
+                            <del>{{x.old_price}}</del>
+                            {% endif %}
+                        {{x.money}}{{x.price}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</main>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+<main>
+    <section  id="about_us1">
+        <div class="whoAreWe text-center">
+            КТО МЫ<br>
+            ТАКИЕ
+        </div>
+    </section>
+    <section id="about_us2">
+        <div class="container mt-5">
+            <div class="row">
+                {% for x in about_us %}
+                <div class="col-6">
+                    <div class="text-center mb-3"><img src="{% static 'image/icon.png' %}" alt=""></div>
+                    <div class="text-center"><p>{{x.title}}</p></div>
+                    <div class="text-center font-13 f-italic"> 
+                        {{x.body}}</div>
+                </div>
+                {% endfor %}
+                {% for x in mini %}
+                <div class="col-4   mt-5">
+                    <div class="text-center mb-3"><img src="{% static 'image/icon3.webp' %}" alt=""></div>
+                    <div class="text-center m-auto font-13  f-italic" style="width: 70%;"> 
+                        {{x.body}}</div>
+                </div>
+                {% endfor %}
+                
+            </div>
+            <div class="text-center mt-5 mb-5">
+                <button class="btn btn-primary rounded-0 px-3 m-auto">В МАГАЗИН ></button>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+
+
+{% endblock %}

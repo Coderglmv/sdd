@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+	<title></title>
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="col-4">
+			<div class="card">
+				{% for x in main %}
+				
+					<div>
+						<p>{{x.title}}</p>
+						<p>{{x.body}}</p>
+						<p>{{x.about_us_product}}</p>
+						<p>{{x.video}}</p>
+						<p>{{x.image.url}}</p>
+					</div>
+
+				{% endfor %}
+			</div>
+			
+		</div>	
+
+		<div class="col-4">
+			<div class="card">
+			{% for x in aboutProduct %}
+				
+				<div>
+					<p>{{x.title}}</p>
+					<p>{{x.body}}</p>
+				</div>
+
+			{% endfor %}</div>
+		</div>	
+
+		<div class="col-4">
+			<div class="card">
+				{% for x in connection %}
+				
+				<div>
+					<p>{{x.name}}</p>
+					<p>{{x.email}}</p>
+					<p>{{x.phone}}</p>
+					<p>{{x.special_request}}</p>
+					<p>{{x.created_at}}</p>
+		
+				</div>
+
+			{% endfor %}
+			</div>
+						
+			
+		</div>	
+	</div>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

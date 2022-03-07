@@ -1,0 +1,104 @@
+
+
+main #section1{
+    background-color: black;
+    height: 95vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 140px;
+}
+
+main #section1 .realy_voice{
+    color: white;
+    font-size: 80px;
+    font-family: open sans condensed,sans-serif;
+    font-weight: 100;
+    margin-top: 30px;
+    margin-left: 20px;
+}   
+
+main #section2{
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    padding: 10px 140px;   
+    display: flex;
+}
+
+.f-italic{
+    font-family: open sans condensed,sans-serif;
+}
+
+.font-13{
+    font-size: 13px;
+}
+
+
+main #section3{
+    background-image: url('../image/section3.webp');
+    height: 130vh;
+    width: 100%;
+}
+
+main #section3 .about_us{
+    text-align: center;
+    padding-top: 40px;
+}
+
+main #section3 .about_us p{
+    color: white;
+    font-size: 63px;
+    font-weight: 200;
+    width: 400px;
+    margin: auto;
+
+}
+
+
+main #section3 .bottom-image p{
+    font-size: 13px;
+}
+
+main #section4 .about_us{
+    text-align: center;
+    padding-top: 40px;
+}
+
+main #section4 .about_us p{
+    color: blue;
+    font-size: 63px;
+    font-weight: 400;
+    width: 400px;
+    margin: auto;
+    margin-top: 20px;
+
+}
+
+main #section4 #input input{
+    width: 307px;
+    border: 1px solid black;
+    height: 29px;
+    padding-left: 17px;
+    margin-top: 9px;
+}
+
+main #section4 #input textarea{
+    height: 105px;
+    margin-top: 9px;
+    margin-left: 10px;
+    width: 304px;
+    border: 1px solid black;
+    padding: 11px 18px;
+
+}
+
+
+main #section5{
+    width: 100%;
+    height: 150px;
+    padding: 40px 200px;
+    background-color: black;
+    color: white;
+    margin-top: 20px;
+}
