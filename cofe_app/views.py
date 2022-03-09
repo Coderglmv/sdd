@@ -47,3 +47,8 @@ def database(request):
 		'aboutProduct': aboutProduct,
 		'connection':connection
 		})     
+
+def pay(request, pk):
+    quantity = request.POST['quantity']
+    product = Products.objects.get(id=pk)
+    return render(request, 'pay.html', {'quantity':quantity, 'product': product})    

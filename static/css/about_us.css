@@ -21,3 +21,18 @@ main #to_book1{
     padding: 100px 250px;
     margin-top: 100px;
 }
+
+.quantity{
+	width: 118px;
+    border: 1px solid grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 14px;
+    height: 41px;
+}
+
+.quantity button{
+	border: none;
+	background: none;
+}

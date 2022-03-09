@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import about_us, main, shopView, bookView, database
+from .views import about_us, main, shopView, bookView, database, pay
 app_name = 'cofe'
 
 urlpatterns = [
@@ -8,5 +8,6 @@ urlpatterns = [
     path('shop/',  shopView, name='shop'),
     path('book/<int:pk>/',  bookView, name='book'),
     path('database/',  database, name='database'),
+    path('pay<int:pk>/',  pay, name='pay')
 
 ]

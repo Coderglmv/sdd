@@ -1,0 +1,92 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<main>
+    <section id="pay" class="mb-5" style="margin-top: 269px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-8" >
+                    <h4>Моя корзина</h4>
+                    <hr style="width: 90%">
+                    <div class="d-flex mt-5 mb-5">
+                        <div style="    width: 136px; border: 1px solid grey;">
+                            <img style="width: 130px;" src="{{product.image.url}}">
+                        </div>
+
+                        <div class="ms-3" style="margin-right: 170px">
+                            <h6>Ваш товар</h6>
+                            <p id="price">{{product.money}}{{product.price}}</p>
+                        </div>
+
+                        <div class="quantity">
+                            <button onclick="minus()"  class="mb-0">-</button>
+                            <p id="count" class="mb-0">{{quantity}}</p>
+                            <button onclick="add()" class="mb-0">+</button>
+                        </div>
+                        <div class="ms-5">
+                            <p class="mb-0 mt-1" id="all_price">{{product.money}}{{product.price}}</p>
+                        </div>
+                    </div>
+                    <hr style="width: 90%">
+                </div>
+                
+                <div class="col-4">
+                    <h4>Детали заказа</h4>
+                    <hr>
+                    <div class="d-flex justify-content-between mt-5 mb-5">
+                        <div>
+                            <h5 style="font-weight: 100" class="mb-0">Сумма</h5>
+                        </div>
+                        <div>
+                            <h5 style="font-weight: 100" class="mb-0 mt-1" id="all_price">{{product.money}}{{product.price}}</h5>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="d-flex  justify-content-between">
+                        <div>
+                            <h5 style="font-weight: 100" class="mb-0">Итого</h5>
+                        </div>
+                        <div>
+                            <h5 style="font-weight: 100" class="mb-0 mt-1" id="all_price">{{product.money}}{{product.price}}</h5>
+                        </div>
+                    </div>
+                    <button class="w-100 btn btn-primary text-center rounded-0 mt-4 py-3">Оформить заказ</button>
+                    <div class="text-center">
+                        Безопасный платеж
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </section>
+</main>
+    
+<script type="text/javascript">
+    let count =  parseInt(document.getElementById("count").innerHTML)
+    function add() {
+        count += 1;
+        s = document.getElementById("count").innerHTML = count;
+        price = document.getElementById("price").innerHTML;
+        a = s * price[3];
+        document.getElementById("all_price").innerHTML = a;
+    }
+    function minus() {
+        count -= 1;
+        s = document.getElementById("count").innerHTML = count;
+        price = document.getElementById("price").innerHTML;
+        a = s * price[3];
+        document.getElementById("all_price").innerHTML = a;
+        // location.reload()
+    }
+
+        
+    
+
+
+</script>
+
+{% endblock %}
